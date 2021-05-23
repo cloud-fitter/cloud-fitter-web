@@ -1,0 +1,176 @@
+@import './common';
+
+// 主框架高度、滚动条样式覆盖
+#root {
+  height: 100%;
+  overflow: auto;
+}
+
+#root::-webkit-scrollbar-track-piece {
+  //滚动条凹槽的颜色，还可以设置边框属性
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+#root::-webkit-scrollbar {
+  //滚动条的宽度
+  width: 5px;
+}
+
+#root::-webkit-scrollbar-thumb {
+  background-color: #6e6e6e;
+  border-radius: 5px;
+}
+
+// menu组件样式覆盖
+.ant-menu-item-selected {
+  color: #fff !important;
+  background-color: #3b60d0 !important;
+}
+
+.ant-menu-inline {
+  border-right: none !important;
+}
+
+.ant-menu-inline .ant-menu-item {
+  width: 100% !important;
+}
+
+// tab组件样式覆盖
+.ant-tabs {
+  height: 100%;
+  background-color: #fff;
+}
+
+.ant-tabs-bar {
+  margin: 0 !important;
+}
+
+.ant-tabs-content {
+  height: 100%;
+}
+
+.ant-tabs-tab {
+  width: 140px;
+  text-align: center;
+  background-color: #f4f4f4;
+  border-top: 2px solid #f4f4f4;
+}
+
+.ant-tabs-tab-active {
+  background-color: #fff;
+  border-top: 2px solid #3d63d8;
+}
+
+.ant-tabs-nav-scroll {
+  background-color: #f4f4f4;
+}
+
+.ant-tabs-nav .ant-tabs-tab {
+  margin: 0 !important;
+}
+
+.ant-tabs-nav .ant-tabs-tab-active {
+  text-align: center;
+  background-color: #fff;
+  border-top: 2px solid @primary-color;
+}
+
+.ant-tabs-ink-bar {
+  background-color: transparent !important;
+}
+
+// 表格表头背景色
+.ant-table-thead > tr > th {
+  background: #ebeffb !important;
+}
+
+.ant-tooltip-inner {
+  min-height: 30px !important;
+  color: #666 !important;
+  font-size: 12px !important;
+  background-color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.ant-tooltip-arrow::before {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.ant-table-body::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+.ant-table-body::-webkit-scrollbar-track-piece {
+  background-color: #fafafa;
+}
+
+.ant-table-body::-webkit-scrollbar-thumb {
+  background-color: #e8e8e8;
+}
+
+.ant-table-header::-webkit-scrollbar-track-piece {
+  background-color: #ebeffb;
+}
+
+.ant-table-body-inner::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+.ant-table-body-inner::-webkit-scrollbar-track-piece {
+  background-color: #fafafa;
+}
+
+.ant-table-body-inner::-webkit-scrollbar-thumb {
+  background-color: #e8e8e8 !important;
+}
+
+.ant-table-tbody
+  > tr.ant-table-row-hover:not(.ant-table-expanded-row):not(.ant-table-row-selected)
+  > td,
+.ant-table-tbody
+  > tr:hover:not(.ant-table-expanded-row):not(.ant-table-row-selected)
+  > td,
+.ant-table-thead
+  > tr.ant-table-row-hover:not(.ant-table-expanded-row):not(.ant-table-row-selected)
+  > td,
+.ant-table-thead
+  > tr:hover:not(.ant-table-expanded-row):not(.ant-table-row-selected)
+  > td {
+  background: #f0f6ff;
+}
+
+.ant-table-hide-scrollbar {
+  padding-right: 16px !important;
+  overflow-y: hidden !important;
+  background-color: #ebeffb !important;
+}
+
+button[type='button'].ant-btn-background-ghost.ant-btn-primary {
+  border-color: #9eb1eb;
+}
+
+// button组件样式覆盖
+button[type='button'].ant-btn.ant-btn-primary.ant-btn-background-ghost:hover {
+  color: #ff7700;
+  border-color: #ff7700;
+}
+
+button[type='button'].ant-btn.ant-btn-link:hover {
+  color: #ff7700;
+
+  span {
+    text-decoration: underline;
+  }
+}
+
+.ant-popover {
+  z-index: 900 !important;
+}
+
+// form组件样式覆盖
+.ant-form {
+  .ant-form-item {
+    margin-bottom: 10px;
+  }
+}

@@ -1,0 +1,172 @@
+@primary-color: #3d63d8;
+@emphasis-color: #ff7700;
+
+@border-color: #ddd;
+@font-weaken: #999;
+@font-normal: #666;
+@font-emphasis: #333;
+
+@health-color: #60b720;
+@stop-color: #999;
+@observed-color: #ecb100;
+@warning-color: #ff7700;
+@alarm-color: #ff0000;
+
+@alarm-level-1: #afbe00;
+@alarm-level-2: #809cee;
+@alarm-level-3: #ecb100;
+@alarm-level-4: #ff7700;
+@alarm-level-5: #ff0000;
+
+@low-color: #ff9900;
+@middle-color: #ff7700;
+@high-color: #ff0000;
+
+@point-error-hover: #ff7700;
+
+@grey-bg-color: #f4f4f4;
+@light-blue-bg-color: #ebeffb;
+
+// component content layout
+.contentHeader {
+  .paramItemSelect {
+    width: 190px;
+    margin: 5px 10px 5px 0;
+  }
+
+  .paramItemRangePicker {
+    width: 280px;
+    margin: 5px 10px 5px 0;
+  }
+
+  .paramItemSearch {
+    width: 400px;
+    margin: 5px 0;
+  }
+
+  .optItems {
+    margin: 15px 0 5px 0;
+  }
+}
+
+.tabContent() {
+  height: 100%;
+  padding: 40px;
+  background-color: #fff;
+}
+
+.colon {
+  display: inline-block;
+  margin: 0 6px 0 0;
+  font-style: normal;
+
+  &::after {
+    display: inline-block;
+    margin: 0 0 0 3px;
+    content: ':';
+  }
+}
+
+.dateHyphen {
+  display: inline-block;
+  width: 10px;
+  color: rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+.titleRectDecoration {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    top: 20px;
+    left: -1px;
+    display: inline-block;
+    width: 6px;
+    height: 18px;
+    background-color: @primary-color;
+    content: '';
+  }
+}
+
+.modalBody {
+  padding: 0 86px 0 26px;
+}
+
+.deleteModalBody {
+  padding: 0 86px 16px 132px;
+
+  > p:first-child {
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 20px;
+  }
+
+  .tips {
+    color: @emphasis-color;
+  }
+}
+
+.modalFooter {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding: 0 86px 16px 132px;
+
+  > div {
+  }
+}
+
+.deleteBtnInTable {
+  color: rgba(81, 165, 223, 1) !important;
+  border-color: rgba(81, 165, 223, 0.5) !important;
+
+  &:hover {
+    color: @emphasis-color !important;
+    border-color: @emphasis-color !important;
+  }
+}
+
+/**
+  超出省略号显示
+  注意: 元素要设置width
+*/
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+/**清除浮动*/
+.clearfix {
+  &:after {
+    display: block;
+    clear: both;
+    height: 0;
+    font-size: 0;
+    visibility: hidden;
+    content: ' ';
+  }
+}
+
+// 表格某一列的内容单独居左
+td.table_name_left {
+  text-align: left !important;
+}
+
+// 表格中要点击跳转的单元格，模拟type 为link的Button，但可以自动换行
+.table_btn_link {
+  display: flex;
+  padding: 0;
+  color: @primary-color;
+  cursor: pointer;
+  &:hover {
+    color: @emphasis-color;
+    text-decoration: underline;
+  }
+  .table_btn_icon {
+    font-size: 15px;
+  }
+}

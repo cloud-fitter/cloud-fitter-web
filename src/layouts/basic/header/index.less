@@ -1,0 +1,85 @@
+@import '../../../assets/styles/common';
+
+.basicHeader {
+  position: relative;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  height: 80px;
+  background: -webkit-linear-gradient(
+    left,
+    #31478a,
+    #3f5cb5
+  ) !important; /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(
+    right,
+    #31478a,
+    #3f5cb5
+  ) !important; /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(
+    right,
+    #31478a,
+    #3f5cb5
+  ) !important; /* Firefox 3.6 - 15 */
+  background: linear-gradient(
+    to right,
+    #31478a,
+    #3f5cb5
+  ) !important; /* 标准的语法（必须放在最后） */
+
+  .basicHeaderBg {
+    position: absolute;
+    top: 0;
+    left: 65%;
+    width: 727px;
+    height: 80px;
+    background: url('../../../assets/img/layout/headerBg.png') no-repeat;
+    transform: translateX(-50%);
+  }
+
+  .basicHeaderLogo {
+    width: 130px;
+    height: 45px;
+    background-image: url('../../../assets/img/layout/logoAims.png');
+    background-size: 100% 100%;
+    cursor: pointer;
+  }
+
+  .basicHeaderTitle {
+    margin-left: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 28px;
+  }
+
+  .basicHeaderGap {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+  }
+
+  .basicHeaderUser {
+    z-index: 2;
+    display: inline-block;
+    float: right;
+
+    .basicHeaderLogoutBtn {
+      margin-left: 20px;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  }
+
+  .returnHome {
+    margin-top: 10px;
+    margin-left: 20px;
+    color: #eee;
+    cursor: pointer;
+  }
+}

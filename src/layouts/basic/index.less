@@ -1,0 +1,35 @@
+.basicLayout {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+  background: #f0f2f5;
+
+  .basicContent {
+    min-height: e('calc(100vh - 80px)');
+
+    .basicContentBody {
+      overflow: hidden;
+
+      .basicBreadcrumb {
+        height: 60px;
+        padding: 0;
+        background: #fff;
+      }
+
+      .basicContentInner {
+        position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex: auto;
+        flex: auto;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        min-height: 0;
+        margin: 24px;
+        background: #f0f2f5;
+        transition: all 0.2s;
+      }
+    }
+  }
+}
