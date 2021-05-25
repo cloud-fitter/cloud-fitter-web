@@ -6,16 +6,23 @@ interface searchParamProps {
   size: number;
 }
 
+interface feSearchParamProps {
+  cloudType?: any;
+  queryValue?: string;
+}
+
 export interface homeModelState {
   tableData: any[];
   loading: boolean;
   searchParams: searchParamProps;
+  feSearchParams: feSearchParamProps;
 }
 
 export interface homeModelType {
   namespace: 'home';
   state: homeModelState;
   effects: {
+    update: Effect;
     fetchAllEcs: Effect;
   };
   reducers: {
@@ -32,8 +39,19 @@ const homeModel: homeModelType = {
       current: 1,
       size: 999,
     },
+    feSearchParams: {
+      cloudType: undefined,
+      queryValue: '',
+    },
   },
   effects: {
+    // 更新数据
+    *update({ params }, { put }) {
+      yield put({
+        type: 'updateStore',
+        params,
+      });
+    },
     *fetchAllEcs(params: any, { call, put }) {
       yield put({
         type: 'updateStore',
