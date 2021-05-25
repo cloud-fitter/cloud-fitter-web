@@ -1,20 +1,18 @@
 import React, { useEffect } from 'react';
 import { useModel } from '@@/plugin-model/useModel';
 import { connect } from 'umi';
-import { Table } from 'antd';
+import { Table, Spin } from 'antd';
 import { homeModelState } from './model';
-import styles from './index.less';
 
 interface HomeProps {
   home: homeModelState;
-  querying?: boolean;
   fetchAllEcs: (params: any) => any;
 }
 
 const Home: React.FC<HomeProps> = (props) => {
   const { setBreadcrumb } = useModel('layout');
   const { home, fetchAllEcs } = props;
-  const { tableData, searchParams } = home;
+  const { tableData, searchParams, loading } = home;
 
   useEffect(() => {
     setBreadcrumb({
@@ -108,20 +106,21 @@ const Home: React.FC<HomeProps> = (props) => {
 
   return (
     <div className={'pageContent'}>
-      <Table
-        rowKey={(record) => record.key}
-        dataSource={tableData}
-        columns={columns}
-        pagination={false}
-      />
+      <Spin spinning={loading} delay={500}>
+        <Table
+          rowKey={(record) => record.key}
+          dataSource={tableData}
+          columns={columns}
+          pagination={false}
+        />
+      </Spin>
     </div>
   );
 };
 
 export default connect(
-  ({ home, loading }: any) => ({
+  ({ home }: any) => ({
     home,
-    querying: loading.effects['home/fetchAllEcs'],
   }),
   {
     fetchAllEcs: (params: any) => ({

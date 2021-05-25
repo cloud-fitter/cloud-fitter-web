@@ -8,6 +8,7 @@ interface searchParamProps {
 
 export interface homeModelState {
   tableData: any[];
+  loading: boolean;
   searchParams: searchParamProps;
 }
 
@@ -26,6 +27,7 @@ const homeModel: homeModelType = {
   namespace: 'home',
   state: {
     tableData: [],
+    loading: false,
     searchParams: {
       current: 1,
       size: 999,
@@ -33,13 +35,20 @@ const homeModel: homeModelType = {
   },
   effects: {
     *fetchAllEcs(params: any, { call, put }) {
+      yield put({
+        type: 'updateStore',
+        params: { loading: true },
+      });
       const { ecses } = yield call(queryAllEcs, params);
       const tableData = ecses.map((item: any, index: number) =>
         Object.assign({}, item, { key: index }),
       );
       yield put({
         type: 'updateStore',
-        params: { tableData },
+        params: {
+          tableData,
+          loading: false,
+        },
       });
     },
   },
