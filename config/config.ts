@@ -14,13 +14,10 @@ export default defineConfig({
   dynamicImport: {
     loading: '@/pages/pageLoading',
   },
-  request: {
-    dataField: 'resData',
-  },
   routes,
   proxy: {
-    '/ecs': {
-      target: 'http://121.41.88.120:8080',
+    '/apis': {
+      target: 'http://localhost:8081',
       changeOrigin: true,
     },
   },
