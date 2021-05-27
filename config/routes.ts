@@ -1,15 +1,23 @@
 export default [
   {
     path: '/',
+    redirect: '/home',
+  },
+  {
+    path: '/home',
+    component: './home',
+  },
+  {
+    path: '/',
     component: '../layouts/basic',
     routes: [
       {
-        path: '/',
-        redirect: '/home',
+        path: '/ecs',
+        component: './ecs',
       },
       {
-        path: '/home',
-        component: './home',
+        path: '/billing',
+        component: './billing',
       },
       {
         component: './exception/404',

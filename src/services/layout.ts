@@ -1,7 +1,7 @@
-import { request } from 'umi';
+// import { request } from 'umi';
 
-export async function queryData() {
-  return request('/apis/ecs/all', {
-    method: 'POST',
-  });
-}
+// export async function queryData() {
+//   return request('/apis/ecs/all', {
+//     method: 'POST',
+//   });
+// }

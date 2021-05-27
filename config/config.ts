@@ -2,7 +2,7 @@ import { defineConfig } from 'umi';
 import routes from './routes';
 
 export default defineConfig({
-  title: 'Cloud-Fitter',
+  title: 'CloudFitter',
   hash: true,
   targets: {
     ie: 11,

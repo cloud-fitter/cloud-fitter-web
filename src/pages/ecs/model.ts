@@ -19,7 +19,7 @@ export interface homeModelState {
 }
 
 export interface homeModelType {
-  namespace: 'home';
+  namespace: 'ecs';
   state: homeModelState;
   effects: {
     update: Effect;
@@ -31,7 +31,7 @@ export interface homeModelType {
 }
 
 const homeModel: homeModelType = {
-  namespace: 'home',
+  namespace: 'ecs',
   state: {
     tableData: [],
     loading: false,
