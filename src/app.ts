@@ -2,7 +2,7 @@ import { RequestConfig } from 'umi';
 import { errorHandler } from '@/utils/errorHandle';
 
 export const request: RequestConfig = {
-  timeout: 20000,
+  timeout: 60000,
   // errorConfig: {
   //   adaptor: (res) => {
   //     return {
