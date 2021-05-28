@@ -73,6 +73,11 @@ const Ecs: React.FC<HomeProps> = (props) => {
       dataIndex: 'provider',
       key: 'provider',
       align: 'center',
+      render: (text: any) => {
+        return (
+          <div>{cloudTypes.filter((item) => item.value === text)[0].label}</div>
+        );
+      },
     },
     {
       title: '账户名',

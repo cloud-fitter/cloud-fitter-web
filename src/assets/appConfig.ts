@@ -1,31 +1,31 @@
 export const menuList = [
   {
     title: 'ECS总览',
-    key: 'home',
+    key: 'ecs',
     icon: 'icon-quanju1',
   },
-  // {
-  //   title: '费用数据',
-  //   key: 'billing',
-  //   icon: 'icon-quanju1',
-  // },
+  {
+    title: '费用数据',
+    key: 'billing',
+    icon: 'icon-lishijilu',
+  },
 ];
 
 export const cloudTypes = [
   {
-    label: 'ali',
+    label: '阿里云',
     value: 'ali',
   },
   {
-    label: 'tencent',
+    label: '腾讯云',
     value: 'tencent',
   },
   {
-    label: 'huawei',
+    label: '华为云',
     value: 'huawei',
   },
   {
-    label: 'aws',
+    label: '亚马逊云',
     value: 'aws',
   },
 ];

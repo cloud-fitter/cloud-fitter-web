@@ -1,6 +1,5 @@
 import { Effect, Reducer } from 'umi';
 import { queryBilling } from './service';
-takeMonth();
 
 function takeMonth() {
   let date = new Date();
@@ -9,31 +8,32 @@ function takeMonth() {
   m = m < 10 ? '0' + m : m + '';
   return y + '-' + m;
 }
+takeMonth();
 
 interface feSearchParamProps {
   billingCycle?: string;
   provider?: string;
 }
 
-export interface homeModelState {
+export interface billingModelState {
   tableData: any[];
   loading: boolean;
   searchParams: feSearchParamProps;
 }
 
-export interface homeModelType {
+export interface billingModelType {
   namespace: 'billing';
-  state: homeModelState;
+  state: billingModelState;
   effects: {
     update: Effect;
     fetchBilling: Effect;
   };
   reducers: {
-    updateStore: Reducer<homeModelState>;
+    updateStore: Reducer<billingModelState>;
   };
 }
 
-const homeModel: homeModelType = {
+const billingModel: billingModelType = {
   namespace: 'billing',
   state: {
     tableData: [],
@@ -56,8 +56,8 @@ const homeModel: homeModelType = {
         type: 'updateStore',
         params: { loading: true },
       });
-      const { ecses } = yield call(queryBilling, params);
-      const tableData = ecses.map((item: any, index: number) =>
+      const { billings } = yield call(queryBilling, params);
+      const tableData = billings.map((item: any, index: number) =>
         Object.assign({}, item, { key: index }),
       );
       yield put({
@@ -79,4 +79,4 @@ const homeModel: homeModelType = {
   },
 };
 
-export default homeModel;
+export default billingModel;
